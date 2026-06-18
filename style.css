@@ -1,0 +1,285 @@
+/* =============================================
+   style.css - Main stylesheet for my portfolio
+   Author: Aden Farah
+   ============================================= */
+
+/* Reset - remove default browser spacing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Color variables I use across the whole site */
+:root {
+  --dark-bg: #080c14;
+  --dark-card: #111827;
+  --dark-border: #1e2d4a;
+  --blue-main: #2563eb;
+  --blue-light: #3b82f6;
+  --text-main: #f0f4ff;
+  --text-muted: #8496b0;
+  --white: #ffffff;
+  --blue-glow: rgba(37, 99, 235, 0.18);
+}
+
+/* Smooth scrolling when clicking nav links */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--dark-bg);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── BACKGROUND CANVAS (particle animation) ── */
+#bgCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  /* sits behind everything else */
+  pointer-events: none;
+}
+
+/* ── NAVBAR ── */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  height: 68px;
+  background: rgba(8, 12, 20, 0.85);
+  /* frosted glass effect */
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--dark-border);
+}
+
+.navbar-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+.navbar-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+  position: relative;
+}
+
+/* Underline animation on hover */
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--blue-light);
+  transition: width 0.25s;
+}
+
+.navbar-links a:hover,
+.navbar-links a.active {
+  color: var(--white);
+}
+
+.navbar-links a:hover::after,
+.navbar-links a.active::after {
+  width: 100%;
+}
+
+/* "Hire me" button in navbar */
+.navbar-btn {
+  background: var(--blue-main);
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.navbar-btn:hover {
+  background: var(--blue-light);
+  box-shadow: 0 0 20px var(--blue-glow);
+}
+
+/* ── SECTIONS ── */
+section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Big title used at the top of each section */
+.section-heading {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 60px;
+  letter-spacing: -0.02em;
+}
+
+/* ── BUTTONS ── */
+.btn-blue {
+  background: var(--blue-main);
+  color: #fff;
+  border: none;
+  padding: 13px 28px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+}
+
+.btn-blue:hover {
+  background: var(--blue-light);
+  box-shadow: 0 0 28px var(--blue-glow);
+  transform: translateY(-1px);
+}
+
+.btn-border {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--dark-border);
+  padding: 13px 28px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: border-color 0.2s, color 0.2s, transform 0.15s;
+}
+
+.btn-border:hover {
+  border-color: var(--blue-light);
+  color: var(--blue-light);
+  transform: translateY(-1px);
+}
+
+/* ── FADE IN ANIMATION ──
+   Elements start invisible and slide up when they enter the screen */
+.show-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.show-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── FOOTER ── */
+.site-footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 60px;
+  border-top: 1px solid var(--dark-border);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.site-footer span {
+  color: var(--blue-light);
+}
+
+/* Social links in footer */
+.footer-links {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 500;
+  border: 1px solid var(--dark-border);
+  border-radius: 8px;
+  padding: 7px 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: border-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.footer-links a:hover {
+  border-color: var(--blue-main);
+  color: var(--blue-light);
+  box-shadow: 0 0 12px var(--blue-glow);
+}
+
+.footer-links svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+/* ── RESPONSIVE - mobile adjustments ── */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    padding: 28px 20px;
+  }
+}
+
+/* Skip animations for people who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  .show-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
