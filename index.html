@@ -833,140 +833,32 @@
       /* ── RESPONSIVE ── */
       @media (max-width: 768px) {
         nav {
-          height: 76px;
-          padding: 0 24px;
+          padding: 0 20px;
         }
-
-        .nav-links {
-          display: none;
-        }
-
-        .nav-cta {
-          padding: 8px 16px;
-          font-size: 0.8rem;
-        }
-
         #home {
-          min-height: auto;
           flex-direction: column;
-          align-items: flex-start;
-          padding: 120px 20px 56px;
-          gap: 32px;
+          padding: 100px 24px 60px;
         }
-
-        .hero-title {
-          font-size: clamp(3rem, 14vw, 4.4rem);
-          line-height: 0.95;
-          margin-bottom: 28px;
-          word-break: normal;
-        }
-
-        .hero-sub {
-          font-size: 1.05rem;
-          line-height: 1.75;
-          max-width: 100%;
-          margin-bottom: 32px;
-        }
-
-        .hero-eyebrow {
-          font-size: 0.68rem;
-          line-height: 1.5;
-          letter-spacing: 0.14em;
-          margin-bottom: 32px;
-        }
-
-        .hero-btns {
-          width: 100%;
-          gap: 14px;
-          margin-bottom: 28px;
-        }
-
-        .hero-btns a {
-          width: 100%;
-          justify-content: center;
-          padding: 15px 22px;
-        }
-
         .hero-photo {
           width: 100%;
-          height: 420px;
-          margin-right: 0;
-          border-radius: 22px;
+          height: 300px;
         }
-
-        .hero-photo img {
-          object-fit: cover;
-          object-position: center top;
-        }
-
         #bio,
         #stack,
         #projects,
         #certifications,
         #cv,
         #contact {
-          padding: 72px 20px;
+          padding: 80px 24px;
         }
-
-        #bio {
-          padding-top: 64px;
-        }
-
-        .section-title {
-          font-size: clamp(2.6rem, 12vw, 4rem);
-          margin-bottom: 36px;
-        }
-
         .bio-card {
           padding: 32px 24px;
         }
-
-        .bio-btns {
-          width: 100%;
-        }
-
-        .bio-btns a {
-          width: 100%;
-          justify-content: center;
-        }
-
-        .projects-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .cv-header {
-          flex-direction: column;
-          gap: 16px;
-        }
-
         .form-row {
           flex-direction: column;
         }
-
-        footer {
-          flex-direction: column;
-          gap: 18px;
-          text-align: center;
-          padding: 28px 20px;
-        }
-
-        .footer-socials {
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-      }
-
-      @media (max-width: 420px) {
-        .hero-title {
-          font-size: clamp(2.6rem, 13vw, 3.4rem);
-        }
-
-        .hero-eyebrow {
-          font-size: 0.64rem;
-        }
-
-        .hero-photo {
-          height: 400px;
+        .nav-links {
+          display: none;
         }
       }
 
@@ -1181,6 +1073,203 @@
         color: var(--accent2);
         transform: translateY(-1px);
       }
+
+      /* ── MOBILE HERO REDESIGN ── */
+      .mobile-title {
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          overflow-x: hidden;
+        }
+
+        nav {
+          top: 14px;
+          left: 18px;
+          right: 18px;
+          height: 74px;
+          padding: 0 20px;
+          border-radius: 34px;
+          background: rgba(8, 12, 20, 0.9);
+          border: 1px solid rgba(132, 150, 176, 0.18);
+          box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+        }
+
+        .nav-logo {
+          font-size: 1.25rem;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .nav-cta {
+          padding: 9px 16px;
+          border-radius: 18px;
+          font-size: 0.82rem;
+        }
+
+        #home {
+          min-height: 100svh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          text-align: center;
+          padding: 128px 22px 36px;
+          gap: 28px;
+        }
+
+        .hero-text {
+          width: 100%;
+          flex: 0 0 auto;
+        }
+
+        .hero-eyebrow {
+          display: none;
+        }
+
+        .desktop-title {
+          display: none;
+        }
+
+        .mobile-title {
+          display: inline;
+        }
+
+        .hero-title {
+          font-size: clamp(2.1rem, 8vw, 2.8rem);
+          line-height: 1.05;
+          letter-spacing: -0.03em;
+          margin-bottom: 22px;
+          text-align: center;
+        }
+
+        .hero-sub {
+          max-width: 330px;
+          margin: 0 auto;
+          font-size: clamp(1rem, 4.4vw, 1.18rem);
+          line-height: 1.75;
+          color: rgba(240, 244, 255, 0.68);
+          text-align: center;
+        }
+
+        .hero-btns {
+          display: none;
+        }
+
+        .hero-photo {
+          width: min(82vw, 380px);
+          height: min(54vh, 520px);
+          min-height: 360px;
+          margin: 6px auto 0;
+          border-radius: 34px;
+          box-shadow: 0 0 50px rgba(37, 99, 235, 0.14);
+        }
+
+        .hero-photo img {
+          width: 100% !important;
+          height: 100% !important;
+          object-fit: cover !important;
+          object-position: center top !important;
+        }
+
+        #bio,
+        #stack,
+        #projects,
+        #cv,
+        #contact {
+          padding: 76px 22px;
+        }
+
+        .section-title {
+          font-size: clamp(2.4rem, 11vw, 3.6rem);
+          margin-bottom: 36px;
+        }
+
+        .bio-card {
+          padding: 30px 22px;
+          border-radius: 18px;
+        }
+
+        .bio-btns {
+          width: 100%;
+        }
+
+        .bio-btns a {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .project-card {
+          padding: 26px;
+        }
+
+        .cv-header {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 16px;
+          margin-bottom: 36px;
+        }
+
+        .cv-big-title {
+          font-size: 1.85rem;
+        }
+
+        .cv-section-header {
+          padding: 16px 18px;
+          gap: 14px;
+        }
+
+        .cv-section-body {
+          padding: 26px 20px;
+        }
+
+        .cv-courses-grid {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+
+        .form-row {
+          flex-direction: column;
+        }
+
+        footer {
+          flex-direction: column;
+          gap: 18px;
+          text-align: center;
+          padding: 28px 20px;
+        }
+
+        .footer-socials {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 430px) {
+        #home {
+          padding-top: 124px;
+          gap: 24px;
+        }
+
+        .hero-sub {
+          max-width: 310px;
+          font-size: 1rem;
+        }
+
+        .hero-photo {
+          width: min(84vw, 360px);
+          height: 410px;
+          min-height: 410px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -1214,7 +1303,12 @@
         <div class="hero-eyebrow">
           IT Student · Cloud, Devops and Security Learner with hands on labs.
         </div>
-        <h1 class="hero-title">Welcome!<br />I'm <span>Aden Farah</span></h1>
+        <h1 class="hero-title">
+          <span class="desktop-title"
+            >Welcome!<br />I'm <span>Aden Farah</span></span
+          >
+          <span class="mobile-title">Welcome!</span>
+        </h1>
         <p class="hero-sub">
           IT student focused on Azure, DevOps, cloud infrastructure and
           security. I build practical projects and document what I learn along
