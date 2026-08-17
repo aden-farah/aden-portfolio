@@ -3,31 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Aden Farah is an OsloMet IT student building practical Azure, DevOps, cloud infrastructure, Linux, and security projects."
-    />
-    <meta name="author" content="Aden Farah" />
-    <meta name="theme-color" content="#080c14" />
-    <link rel="canonical" href="https://www.adenfarah.no/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.adenfarah.no/" />
-    <meta property="og:title" content="Aden Farah - Cloud & DevOps Portfolio" />
-    <meta
-      property="og:description"
-      content="IT student focused on Azure, DevOps, cloud infrastructure, Linux, and cloud security."
-    />
-    <meta
-      property="og:image"
-      content="https://www.adenfarah.no/social-card.png"
-    />
-    <meta name="twitter:card" content="summary_large_image" />
-    <title>Aden Farah - Cloud & DevOps Portfolio</title>
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="alternate icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Aden Farah · Cloud & DevOps Portfolio</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap"
       rel="stylesheet"
@@ -36,13 +12,11 @@
     <link rel="icon" type="image/png" href="favicon.png" />
   </head>
   <body>
-    <canvas id="canvas" aria-hidden="true"></canvas>
+    <canvas id="canvas"></canvas>
 
-    <nav class="site-nav" aria-label="Primary navigation">
-      <a href="#home" class="nav-logo" aria-label="Aden Farah home">
-        <span class="brand-mark">AF</span>
-        <span>Aden F.</span>
-      </a>
+    <!-- NAV -->
+    <nav>
+      <a href="#home" class="nav-logo">Aden F.</a>
       <ul class="nav-links">
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#bio">About</a></li>
@@ -50,339 +24,372 @@
         <li><a href="#cv">CV</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button class="nav-cta" type="button" data-scroll-to="contact">
+      <button
+        class="nav-cta"
+        onclick="
+          document
+            .querySelector('#contact')
+            .scrollIntoView({ behavior: 'smooth' })
+        "
+      >
         Contact me
       </button>
     </nav>
 
-    <main>
-      <section id="home" class="hero-section">
-        <div class="hero-text fade-in">
-          <div class="hero-eyebrow">
-            IT Student - Cloud, DevOps and Security
-          </div>
-          <h1 class="hero-title">Welcome!<br />I'm <span>Aden Farah</span></h1>
-          <p class="hero-sub">
-            IT student focused on Azure, DevOps, cloud infrastructure and
-            security. I build practical projects and document what I learn along
-            the way.
-          </p>
-          <div class="hero-btns" aria-label="Main actions">
-            <a href="#projects" class="btn-primary"
-              ><span aria-hidden="true">&lt;/&gt;</span> View Projects</a
-            >
-            <a href="#contact" class="btn-outline"
-              ><span aria-hidden="true">@</span> Get in touch</a
-            >
-            <a href="cv.pdf" download class="btn-download"
-              ><span aria-hidden="true">PDF</span> Download CV</a
-            >
-          </div>
+    <!-- HERO -->
+    <section id="home">
+      <div class="hero-text fade-in">
+        <div class="hero-eyebrow">
+          IT Student · Cloud, Devops and Security Learner with hands on labs.
         </div>
-        <div class="hero-photo fade-in" style="transition-delay: 0.2s">
-          <img src="photo.jpg" alt="Portrait of Aden Farah" />
+        <h1 class="hero-title">
+          <span class="desktop-title"
+            >Welcome!<br />I'm <span>Aden Farah</span></span
+          >
+          <span class="mobile-title">Welcome!</span>
+        </h1>
+        <p class="hero-sub">
+          IT student focused on Azure, DevOps, cloud infrastructure and
+          security. I build practical projects and document what I learn along
+          the way.
+        </p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn-primary">View Projects →</a>
+          <a href="#contact" class="btn-outline">✉ Get in touch</a>
+          <a href="cv.pdf" download class="btn-download"> ↓ Download CV </a>
         </div>
-      </section>
+      </div>
+      <div class="hero-photo fade-in" style="transition-delay: 0.2s">
+        <img
+          src="photo.jpg"
+          alt="Aden Farah"
+          style="
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+          "
+        />
+      </div>
+    </section>
 
-      <section id="bio" class="page-section">
-        <h2 class="section-title fade-in">Biography</h2>
-        <div class="bio-card fade-in">
-          <p>My name is Aden Abdi Farah.</p>
-          <p>
-            I'm an IT student at OsloMet, currently building hands-on skills in
-            cloud infrastructure, DevOps, Linux, databases and cloud security. I
-            enjoy working with real systems and understanding how everything
-            connects behind the scenes.
-          </p>
-          <p>
-            This portfolio documents my learning journey through practical
-            projects, including cloud hosting on Azure, CI/CD pipelines,
-            serverless functions, infrastructure as code and system monitoring.
-            Each project is something I built to learn by doing, not just
-            reading about it.
-          </p>
-          <p>
-            I'm at the beginning of my career and I'm not pretending otherwise.
-            What I do bring is curiosity, persistence, and a willingness to
-            learn. My goal is to grow into an entry-level IT, cloud or
-            operations role where I can continue learning and contribute to real
-            projects.
-          </p>
-          <div class="bio-btns">
-            <a href="#cv" class="btn-outline">Experience timeline</a>
-            <a href="mailto:aden.farah.dev@gmail.com" class="btn-primary"
-              >Send message</a
-            >
-          </div>
+    <!-- BIO -->
+    <section id="bio">
+      <h2 class="section-title fade-in">Biography</h2>
+      <div class="bio-card fade-in">
+        <p>My name is Aden Abdi Farah</p>
+        <p>
+          I'm an IT student at OsloMet, currently building hands-on skills in
+          cloud infrastructure, DevOps, Linux, databases and cloud security. I
+          enjoy working with real systems and understanding how everything
+          connects behind the scenes.
+        </p>
+        <p>
+          This portfolio documents my learning journey through practical
+          projects, including cloud hosting on Azure, CI/CD pipelines,
+          serverless functions, infrastructure as code and system monitoring.
+          Each project is something I built to learn by doing, not just reading
+          about it.
+        </p>
+        <p>
+          I'm at the beginning of my career and I'm not pretending otherwise.
+          What I do bring is curiosity, persistence, and a willingness to learn.
+          I enjoy figuring things out, solving problems and taking pride in
+          understanding what I build. My goal is to grow into an entry-level IT,
+          cloud or operations role where I can continue learning, contribute to
+          real projects and work alongside experienced professionals.
+        </p>
+        <div class="bio-btns">
+          <a href="#cv" class="btn-outline">Experience timeline →</a>
+          <a href="#contact" class="btn-outline">✉ Send message</a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section
-        id="stack"
-        class="page-section stack-section"
-        aria-labelledby="stack-title"
-      >
-        <h2 id="stack-title" class="section-title fade-in">Tech Stack</h2>
-        <div
-          class="stack-track-wrap fade-in"
-          aria-label="Technologies Aden is learning and using"
-        >
-          <div class="stack-track" id="track1"></div>
-          <div class="stack-track stack-track2" id="track2"></div>
+    <!-- TECH STACK -->
+    <section id="stack">
+      <h2 class="section-title fade-in">Tech Stack</h2>
+      <div class="stack-track-wrap fade-in">
+        <div class="stack-track" id="track1"></div>
+        <div class="stack-track2" id="track2"></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2 class="section-title fade-in">Projects</h2>
+      <div class="projects-grid" id="projectsGrid"></div>
+    </section>
+
+    <!-- CV -->
+    <section id="cv">
+      <div class="cv-header fade-in">
+        <div class="cv-avatar">AF</div>
+        <div class="cv-meta">
+          <div class="cv-eyebrow">Curriculum Vitae</div>
+          <div class="cv-big-title">Experience timeline</div>
+          <div class="cv-subtitle">Roles, collaborations, and experiences.</div>
         </div>
-      </section>
+      </div>
 
-      <section id="projects" class="page-section">
-        <h2 class="section-title fade-in">Projects</h2>
-        <div class="projects-grid" id="projectsGrid" aria-live="polite"></div>
-      </section>
-
-      <section id="cv" class="page-section">
-        <div class="cv-header fade-in">
-          <div class="cv-avatar" aria-hidden="true">AF</div>
-          <div class="cv-meta">
-            <div class="cv-eyebrow">Curriculum Vitae</div>
-            <h2 class="cv-big-title">Experience timeline</h2>
-            <p class="cv-subtitle">
-              Education, work experience, and relevant coursework.
-            </p>
-          </div>
-        </div>
-
-        <div class="cv-section fade-in">
-          <button class="cv-section-header" type="button" aria-expanded="true">
-            <span>
-              <span class="cv-section-number">01</span>
-              <span class="cv-section-label">Education</span>
-            </span>
-            <span class="cv-section-right"
-              ><span>1 Entry</span><span aria-hidden="true">Up</span></span
-            >
-          </button>
-          <div class="cv-section-body open">
-            <article class="cv-entry">
-              <div class="cv-entry-tag">Education</div>
-              <h3 class="cv-entry-title">Bachelor in Information Technology</h3>
-              <div class="cv-entry-date">
-                Oslo Metropolitan University (OsloMet) - 2025 to Present - Oslo,
-                Norway
-              </div>
-              <h4 class="cv-mini-title">Relevant Coursework</h4>
-              <ul class="course-list">
-                <li>Programming</li>
-                <li>Web Development & Inclusive Design</li>
-                <li>Web Programming</li>
-                <li>Rapid Development with Scripting Languages</li>
-                <li>Databases</li>
-                <li>Discrete Mathematics</li>
-                <li>Algorithms & Data Structures</li>
-                <li>Systems Development</li>
-                <li>Human-Computer Interaction</li>
-                <li>Computer Networks & Cloud Services</li>
-                <li>Operating Systems</li>
-                <li>Software Testing</li>
-                <li>Information Security</li>
-                <li>Network & System Administration</li>
-                <li>Web Applications</li>
-                <li>Introduction to Artificial Intelligence</li>
-              </ul>
-            </article>
+      <div class="cv-section fade-in">
+        <div class="cv-section-header" onclick="toggleCVSection(this)">
+          <span class="cv-section-label">01 · Education</span>
+          <div class="cv-section-right">
+            <span>1 Entry</span>
+            <span>↑</span>
           </div>
         </div>
+        <div class="cv-section-body open">
+          <div class="cv-entry-tag">Education</div>
+          <div class="cv-entry-title">Bachelor in Information Technology</div>
+          <div class="cv-entry-date">
+            Oslo Metropolitan University (OsloMet) · 2025 – Present · Oslo,
+            Norway
+          </div>
 
-        <div class="cv-section fade-in">
-          <button class="cv-section-header" type="button" aria-expanded="false">
-            <span>
-              <span class="cv-section-number">02</span>
-              <span class="cv-section-label">Work Experience</span>
-            </span>
-            <span class="cv-section-right"
-              ><span>2 Entries</span><span aria-hidden="true">Down</span></span
-            >
-          </button>
-          <div class="cv-section-body">
-            <article class="cv-entry">
-              <div class="cv-entry-tag">Work</div>
-              <h3 class="cv-entry-title">
-                Security Officer - Protect Vakthold & Sikkerhet
-              </h3>
-              <div class="cv-entry-date">
-                Nasjonalmuseet, Oslo - 05.2025 to Present
-              </div>
-              <ul class="cv-entry-list">
-                <li>Monitored security systems and responded to incidents.</li>
-                <li>
-                  Followed security procedures and operational guidelines.
-                </li>
-                <li>Worked independently and as part of a team.</li>
-                <li>
-                  Maintained situational awareness in a high-traffic
-                  environment.
-                </li>
-                <li>Communicated effectively with visitors and colleagues.</li>
-              </ul>
-            </article>
-            <article class="cv-entry">
-              <div class="cv-entry-tag">Work</div>
-              <h3 class="cv-entry-title">Store Associate - REMA 1000</h3>
-              <div class="cv-entry-date">Oslo - 05.2023 to 03.2026</div>
-              <ul class="cv-entry-list">
-                <li>Delivered customer service in a fast-paced environment.</li>
-                <li>
-                  Handled daily operational tasks and inventory management.
-                </li>
-                <li>
-                  Worked collaboratively with team members to ensure efficient
-                  store operations.
-                </li>
-                <li>
-                  Demonstrated reliability, adaptability, and attention to
-                  detail.
-                </li>
-              </ul>
-            </article>
+          <div class="cv-courses-label">Relevant Coursework</div>
+          <div class="cv-courses-grid">
+            <ul class="cv-entry-list">
+              <li>Programming</li>
+              <li>Web Development & Inclusive Design</li>
+              <li>Web Programming</li>
+              <li>Rapid Development with Scripting Languages</li>
+              <li>Databases</li>
+              <li>Discrete Mathematics</li>
+              <li>Algorithms & Data Structures</li>
+              <li>Systems Development</li>
+            </ul>
+            <ul class="cv-entry-list">
+              <li>Human-Computer Interaction</li>
+              <li>Computer Networks & Cloud Services</li>
+              <li>Operating Systems</li>
+              <li>Software Testing</li>
+              <li>Information Security</li>
+              <li>Network & System Administration</li>
+              <li>Web Applications</li>
+              <li>Introduction to Artificial Intelligence</li>
+            </ul>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section id="contact" class="page-section contact-section">
-        <div class="contact-wrap">
-          <h2 class="section-title fade-in">Get in touch</h2>
-          <p class="contact-sub fade-in">
-            Have a question, want to collaborate, or just want to say hi? I'd
-            love to hear from you.
-          </p>
-          <form class="contact-form fade-in" id="contactForm">
-            <div class="form-row">
-              <div class="field">
-                <label for="nameField">Name</label>
-                <input
-                  id="nameField"
-                  name="name"
-                  type="text"
-                  placeholder="Your name"
-                  autocomplete="name"
-                  required
-                />
-              </div>
-              <div class="field">
-                <label for="emailField">Email</label>
-                <input
-                  id="emailField"
-                  name="email"
-                  type="email"
-                  placeholder="your@email.com"
-                  autocomplete="email"
-                  required
-                />
-              </div>
-            </div>
+      <div class="cv-section fade-in">
+        <div class="cv-section-header" onclick="toggleCVSection(this)">
+          <span class="cv-section-label">02 · Work Experience</span>
+          <div class="cv-section-right">
+            <span>2 Entries</span>
+            <span>↓</span>
+          </div>
+        </div>
+        <div class="cv-section-body">
+          <!-- Job 1 -->
+          <div class="cv-entry-tag">Work</div>
+          <div class="cv-entry-title">
+            Security Officer · Protect Vakthold & Sikkerhet
+          </div>
+          <div class="cv-entry-date">
+            Nasjonalmuseet, Oslo · 05.2025 – Present
+          </div>
+          <ul class="cv-entry-list">
+            <li>Monitored security systems and responded to incidents</li>
+            <li>Followed security procedures and operational guidelines</li>
+            <li>Worked independently and as part of a team</li>
+            <li>
+              Maintained situational awareness in a high-traffic environment
+            </li>
+            <li>Communicated effectively with visitors and colleagues</li>
+          </ul>
+
+          <!-- Divider between jobs -->
+          <div
+            style="border-top: 1px solid var(--border); margin: 28px 0"
+          ></div>
+
+          <!-- Job 2 -->
+          <div class="cv-entry-tag">Work</div>
+          <div class="cv-entry-title">Store Associate · REMA 1000</div>
+          <div class="cv-entry-date">Oslo · 05.2023 – 03.2026</div>
+          <ul class="cv-entry-list">
+            <li>Delivered customer service in a fast-paced environment</li>
+            <li>Handled daily operational tasks and inventory management</li>
+            <li>
+              Worked collaboratively with team members to ensure efficient store
+              operations
+            </li>
+            <li>
+              Demonstrated reliability, adaptability, and attention to detail
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="contact-wrap">
+        <h2 class="section-title fade-in">Get in touch</h2>
+        <p class="contact-sub fade-in">
+          Have a question, want to collaborate, or just want to say hi? I'd love
+          to hear from you.
+        </p>
+        <form class="contact-form fade-in" onsubmit="handleSubmit(event)">
+          <div class="form-row">
             <div class="field">
-              <label for="subjectField">Subject</label>
+              <label for="nameField">Name</label>
               <input
-                id="subjectField"
-                name="subject"
+                id="nameField"
                 type="text"
-                placeholder="What's it about?"
+                placeholder="Your name"
+                required
               />
             </div>
             <div class="field">
-              <label for="messageField">Message</label>
-              <textarea
-                id="messageField"
-                name="message"
-                placeholder="Tell me about your project or question..."
+              <label for="emailField">Email</label>
+              <input
+                id="emailField"
+                type="email"
+                placeholder="your@email.com"
                 required
-              ></textarea>
+              />
             </div>
-            <button type="submit" class="form-submit">Send message</button>
-            <p
-              class="form-note"
-              id="formStatus"
-              role="status"
-              aria-live="polite"
-            ></p>
-          </form>
-        </div>
-      </section>
-    </main>
+          </div>
+          <div class="field">
+            <label for="subjectField">Subject</label>
+            <input
+              id="subjectField"
+              type="text"
+              placeholder="What's it about?"
+            />
+          </div>
+          <div class="field">
+            <label for="messageField">Message</label>
+            <textarea
+              id="messageField"
+              placeholder="Tell me about your project or question..."
+            ></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send message →</button>
+        </form>
+      </div>
+    </section>
 
     <footer>
-      <p>
-        Built by <span>Aden Farah</span> - <span id="footerYear">2026</span>
-      </p>
+      <p>Built by <span>Aden Farah</span> · © 2025</p>
       <div class="footer-socials">
-        <a href="mailto:aden.farah.dev@gmail.com" aria-label="Email Aden Farah"
-          >Email</a
-        >
+        <a href="mailto:aden.farah.dev@gmail.com">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+          </svg>
+          Email
+        </a>
+        <a href="https://github.com/aden-farah" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"
+            />
+          </svg>
+          GitHub
+        </a>
         <a
-          href="https://github.com/aden-farah"
+          href="https://www.linkedin.com/in/aden-farah"
           target="_blank"
           rel="noopener"
-          aria-label="Aden Farah on GitHub"
-          >GitHub</a
         >
-        <a
-          href="https://www.linkedin.com/in/aden-farah-49b8b5333/"
-          target="_blank"
-          rel="noopener"
-          aria-label="Aden Farah on LinkedIn"
-          >LinkedIn</a
-        >
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+            />
+          </svg>
+          LinkedIn
+        </a>
       </div>
     </footer>
 
     <script>
-      var contactEndpoint = "/api/contact";
-      var fallbackEmail = "aden.farah.dev@gmail.com";
+      // =============================================
+      // BACKGROUND ANIMATION
+      // I use the HTML canvas to draw moving dots
+      // and connect them with lines when they get
+      // close to each other - gives that cool
+      // constellation effect in the background
+      // =============================================
 
+      // Grab the canvas element and set up drawing
       var myCanvas = document.getElementById("canvas");
       var pen = myCanvas.getContext("2d");
-      var blueColor = [37, 99, 235];
-      var canvasWidth, canvasHeight;
-      var dotList = [];
-      var isMobile = window.matchMedia("(max-width: 768px)").matches;
-      var totalDots = isMobile ? 45 : 90;
-      var connectDistance = isMobile ? 110 : 160;
-      var arcProgress = 0;
-      var reduceMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
-      ).matches;
 
+      // Blue color I use for everything in the animation
+      var blueColor = [37, 99, 235];
+
+      // Canvas size - gets updated on window resize
+      var canvasWidth, canvasHeight;
+
+      // Array to store all the moving dots
+      var dotList = [];
+
+      // How many dots to show on screen
+      var totalDots = 90;
+
+      // How close two dots need to be before I draw a line between them
+      var connectDistance = 160;
+
+      // Tracks how far along the curved arc line has been drawn (0 to 1)
+      var arcProgress = 0;
+
+      // Make the canvas fill the whole browser window
       function resizeCanvas() {
         canvasWidth = myCanvas.width = window.innerWidth;
         canvasHeight = myCanvas.height = window.innerHeight;
       }
 
+      // Returns a random number between min and max
       function randomBetween(min, max) {
         return Math.random() * (max - min) + min;
       }
 
+      // Create all the dots with random starting positions and speeds
       function createDots() {
         dotList = [];
         for (var i = 0; i < totalDots; i++) {
           dotList.push({
             x: randomBetween(0, canvasWidth),
             y: randomBetween(0, canvasHeight),
-            speedX: randomBetween(-0.25, 0.25),
-            speedY: randomBetween(-0.25, 0.25),
-            size: randomBetween(1, 2.5),
-            opacity: randomBetween(0.2, 0.7),
-            pulseAngle: randomBetween(0, Math.PI * 2),
-            pulseSpeed: randomBetween(0.005, 0.02),
+            speedX: randomBetween(-0.25, 0.25), // how fast it moves left/right
+            speedY: randomBetween(-0.25, 0.25), // how fast it moves up/down
+            size: randomBetween(1, 2.5), // dot radius
+            opacity: randomBetween(0.2, 0.7), // how visible it is
+            pulseAngle: randomBetween(0, Math.PI * 2), // for the pulsing effect
+            pulseSpeed: randomBetween(0.005, 0.02), // how fast it pulses
           });
         }
       }
 
+      // Draw the two curved blue lines in the background
+      // They animate in slowly when the page loads
       function drawCurvedLines() {
         arcProgress = Math.min(arcProgress + 0.003, 1);
+
         var numSteps = Math.floor(arcProgress * 120);
+
         pen.save();
         pen.lineWidth = 1.2;
-        pen.strokeStyle = "rgba(" + blueColor.join(",") + ", 0.22)";
+        pen.setLineDash([]);
+
+        // First arc - goes from left side to top right
+        pen.strokeStyle = "rgba(" + blueColor.join(",") + ", 0.25)";
         pen.beginPath();
         for (var i = 0; i <= numSteps; i++) {
           var t = i / 120;
+          // Quadratic bezier curve - 3 points: start, control, end
           var x =
             (1 - t) * (1 - t) * 0 +
             2 * (1 - t) * t * (canvasWidth * 0.05) +
@@ -391,293 +398,354 @@
             (1 - t) * (1 - t) * (canvasHeight * 0.55) +
             2 * (1 - t) * t * (canvasHeight * 0.05) +
             t * t * 0;
-          if (i === 0) pen.moveTo(x, y);
-          else pen.lineTo(x, y);
+          if (i === 0) {
+            pen.moveTo(x, y);
+          } else {
+            pen.lineTo(x, y);
+          }
         }
         pen.stroke();
+
+        // Second arc - more subtle, goes from right to bottom
+        pen.strokeStyle = "rgba(" + blueColor.join(",") + ", 0.1)";
+        pen.beginPath();
+        for (var i = 0; i <= numSteps; i++) {
+          var t = i / 120;
+          var x =
+            (1 - t) * (1 - t) * canvasWidth +
+            2 * (1 - t) * t * (canvasWidth * 0.6) +
+            t * t * (canvasWidth * 0.3);
+          var y =
+            (1 - t) * (1 - t) * (canvasHeight * 0.8) +
+            2 * (1 - t) * t * (canvasHeight * 0.5) +
+            t * t * canvasHeight;
+          if (i === 0) {
+            pen.moveTo(x, y);
+          } else {
+            pen.lineTo(x, y);
+          }
+        }
+        pen.stroke();
+
         pen.restore();
       }
 
+      // Main animation loop - runs every frame (about 60 times per second)
       function drawFrame() {
+        // Clear the screen so we can redraw everything
         pen.clearRect(0, 0, canvasWidth, canvasHeight);
+
+        // Draw the curved background lines
         drawCurvedLines();
+
+        // Move and draw each dot
         for (var i = 0; i < dotList.length; i++) {
           var dot = dotList[i];
+
+          // Move the dot
           dot.x += dot.speedX;
           dot.y += dot.speedY;
+
+          // Make the dot gently pulse in brightness
           dot.pulseAngle += dot.pulseSpeed;
           var currentOpacity =
             dot.opacity * (0.7 + 0.3 * Math.sin(dot.pulseAngle));
+
+          // Wrap around edges - if dot goes off screen it comes back on the other side
           if (dot.x < -10) dot.x = canvasWidth + 10;
           if (dot.x > canvasWidth + 10) dot.x = -10;
           if (dot.y < -10) dot.y = canvasHeight + 10;
           if (dot.y > canvasHeight + 10) dot.y = -10;
+
+          // Draw the dot as a small circle
           pen.beginPath();
           pen.arc(dot.x, dot.y, dot.size, 0, Math.PI * 2);
           pen.fillStyle =
             "rgba(" + blueColor.join(",") + ", " + currentOpacity + ")";
           pen.fill();
         }
-        for (var a = 0; a < dotList.length; a++) {
-          for (var b = a + 1; b < dotList.length; b++) {
-            var dx = dotList[a].x - dotList[b].x;
-            var dy = dotList[a].y - dotList[b].y;
+
+        // Check every pair of dots - if they're close enough, draw a line between them
+        for (var i = 0; i < dotList.length; i++) {
+          for (var j = i + 1; j < dotList.length; j++) {
+            var dx = dotList[i].x - dotList[j].x;
+            var dy = dotList[i].y - dotList[j].y;
             var distance = Math.sqrt(dx * dx + dy * dy);
+
             if (distance < connectDistance) {
+              // Closer dots = more visible line
+              var lineOpacity = (1 - distance / connectDistance) * 0.15;
+
               pen.beginPath();
-              pen.moveTo(dotList[a].x, dotList[a].y);
-              pen.lineTo(dotList[b].x, dotList[b].y);
+              pen.moveTo(dotList[i].x, dotList[i].y);
+              pen.lineTo(dotList[j].x, dotList[j].y);
               pen.strokeStyle =
-                "rgba(" +
-                blueColor.join(",") +
-                ", " +
-                (1 - distance / connectDistance) * 0.15 +
-                ")";
+                "rgba(" + blueColor.join(",") + ", " + lineOpacity + ")";
               pen.lineWidth = 0.7;
               pen.stroke();
             }
           }
         }
+
+        // Ask the browser to run this function again next frame
         requestAnimationFrame(drawFrame);
       }
 
+      // Re-create everything if the window gets resized
       window.addEventListener("resize", function () {
         resizeCanvas();
         createDots();
       });
+
+      // Start the animation
       resizeCanvas();
       createDots();
-      if (!reduceMotion) drawFrame();
+      drawFrame();
+
+      // =============================================
+      // TECH STACK SCROLLING ROWS
+      // I create cards with logos for each technology
+      // and duplicate them 4x so the scroll loop
+      // never shows an empty gap
+      // =============================================
 
       var iconFolder = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons";
+
+      // Technologies in the top scrolling row
       var topRowTech = [
-        ["JavaScript", iconFolder + "/javascript/javascript-original.svg"],
-        ["TypeScript", iconFolder + "/typescript/typescript-original.svg"],
-        ["React", iconFolder + "/react/react-original.svg"],
-        ["Node.js", iconFolder + "/nodejs/nodejs-original.svg"],
-        ["Python", iconFolder + "/python/python-original.svg"],
-        ["HTML5", iconFolder + "/html5/html5-original.svg"],
-        ["CSS3", iconFolder + "/css3/css3-original.svg"],
-        ["Git", iconFolder + "/git/git-original.svg"],
-        ["Docker", iconFolder + "/docker/docker-original.svg"],
-      ];
-      var bottomRowTech = [
-        ["MySQL", iconFolder + "/mysql/mysql-original.svg"],
-        ["MongoDB", iconFolder + "/mongodb/mongodb-original.svg"],
-        ["PostgreSQL", iconFolder + "/postgresql/postgresql-original.svg"],
-        ["C#", iconFolder + "/csharp/csharp-original.svg"],
-        [".NET", iconFolder + "/dotnetcore/dotnetcore-original.svg"],
-        ["Azure", iconFolder + "/azure/azure-original.svg"],
-        ["Linux", iconFolder + "/linux/linux-original.svg"],
-        ["Tailwind", iconFolder + "/tailwindcss/tailwindcss-original.svg"],
-        ["Next.js", iconFolder + "/nextjs/nextjs-original.svg"],
-        ["Express", iconFolder + "/express/express-original.svg"],
+        {
+          name: "JavaScript",
+          icon: iconFolder + "/javascript/javascript-original.svg",
+        },
+        {
+          name: "TypeScript",
+          icon: iconFolder + "/typescript/typescript-original.svg",
+        },
+        { name: "React", icon: iconFolder + "/react/react-original.svg" },
+        { name: "Node.js", icon: iconFolder + "/nodejs/nodejs-original.svg" },
+        { name: "Python", icon: iconFolder + "/python/python-original.svg" },
+        { name: "HTML5", icon: iconFolder + "/html5/html5-original.svg" },
+        { name: "CSS3", icon: iconFolder + "/css3/css3-original.svg" },
+        { name: "Git", icon: iconFolder + "/git/git-original.svg" },
+        { name: "Docker", icon: iconFolder + "/docker/docker-original.svg" },
       ];
 
+      // Technologies in the bottom scrolling row
+      var bottomRowTech = [
+        { name: "MySQL", icon: iconFolder + "/mysql/mysql-original.svg" },
+        { name: "MongoDB", icon: iconFolder + "/mongodb/mongodb-original.svg" },
+        {
+          name: "PostgreSQL",
+          icon: iconFolder + "/postgresql/postgresql-original.svg",
+        },
+        { name: "C#", icon: iconFolder + "/csharp/csharp-original.svg" },
+        {
+          name: ".NET",
+          icon: iconFolder + "/dotnetcore/dotnetcore-original.svg",
+        },
+        { name: "Azure", icon: iconFolder + "/azure/azure-original.svg" },
+        { name: "Linux", icon: iconFolder + "/linux/linux-original.svg" },
+        {
+          name: "Tailwind",
+          icon: iconFolder + "/tailwindcss/tailwindcss-original.svg",
+        },
+        { name: "Next.js", icon: iconFolder + "/nextjs/nextjs-original.svg" },
+        { name: "Express", icon: iconFolder + "/express/express-original.svg" },
+      ];
+
+      // Adds tech cards to a row container
+      // I add 4 copies of the list so there are no gaps when it loops
       function fillTechRow(rowId, techList) {
         var rowContainer = document.getElementById(rowId);
         var allItems = techList.concat(techList, techList, techList);
+
         for (var i = 0; i < allItems.length; i++) {
           var tech = allItems[i];
           var card = document.createElement("div");
           card.className = "tech-chip";
           card.innerHTML =
             '<img src="' +
-            tech[1] +
-            '" alt="" loading="lazy" /><span>' +
-            tech[0] +
-            "</span>";
+            tech.icon +
+            '" alt="' +
+            tech.name +
+            '" loading="lazy" />' +
+            tech.name;
           rowContainer.appendChild(card);
         }
       }
+
       fillTechRow("track1", topRowTech);
       fillTechRow("track2", bottomRowTech);
 
+      // =============================================
+      // PROJECT CARDS
+      // I store my projects in an array below and
+      // loop through them to build the cards on screen
+      // Just update this list with your real projects!
+      // =============================================
+
       var myProjects = [
         {
-          type: "Full Stack - Cloud",
-          title: "Azure Cloud Portfolio",
+          type: "Full Stack · Cloud",
+          title: "Azure Cloud Portfolio Blog",
           status: "active",
           description:
-            "Personal portfolio hosted on Azure Static Web Apps with custom domain setup, GitHub Actions deployment, SEO metadata, and a planned serverless contact API.",
-          learned: "Learned Azure hosting, DNS, CI/CD, and production polish.",
+            "Building and hosting my personal portfolio website on Azure. The project includes GitHub Actions for CI/CD, Azure hosting, custom domains, and future serverless features such as visitor analytics and monitoring.",
           techUsed: ["Azure", "GitHub Actions", "HTML/CSS", "JavaScript"],
-          githubUrl: "https://github.com/aden-farah",
-          demoUrl: "https://www.adenfarah.no/",
         },
         {
-          type: "DevOps - Containers",
+          type: "DevOps · Containers",
           title: "Docker Monitoring Lab",
           status: "active",
           description:
-            "A hands-on lab focused on containerization, Linux networking, logging, and service monitoring to understand how production systems are operated.",
-          learned:
-            "Practicing operational thinking: logs, metrics, and repeatable setup.",
+            "A hands-on project focused on containerization and monitoring. Services are deployed using Docker and monitored through logging and metrics to understand how production systems are operated.",
           techUsed: ["Docker", "Linux", "Networking", "Monitoring"],
-          githubUrl: "https://github.com/aden-farah",
         },
         {
-          type: "Security - Cloud",
+          type: "Security · Cloud",
           title: "IAM & Security Lab",
           status: "planned",
           description:
-            "A cloud security lab for authentication, authorization, role-based access control, and Microsoft Entra ID concepts.",
-          learned:
-            "Building stronger fundamentals in cloud identity and access.",
+            "A home lab focused on identity and access management concepts. The goal is to learn authentication, authorization, role-based access control, and cloud security best practices.",
           techUsed: ["Microsoft Entra ID", "IAM", "Security", "Azure"],
-          githubUrl: "https://github.com/aden-farah",
         },
       ];
 
       var projectGrid = document.getElementById("projectsGrid");
+
       for (var i = 0; i < myProjects.length; i++) {
         var project = myProjects[i];
-        var tagHTML = project.techUsed
-          .map(function (tech) {
-            return '<span class="chip">' + tech + "</span>";
-          })
-          .join("");
-        var links = "";
-        if (project.githubUrl)
-          links +=
-            '<a href="' +
-            project.githubUrl +
-            '" target="_blank" rel="noopener">GitHub</a>';
-        if (project.demoUrl)
-          links +=
-            '<a href="' +
-            project.demoUrl +
-            '" target="_blank" rel="noopener">Live site</a>';
+
+        // Build the small tech pill tags
+        var tagHTML = "";
+        for (var t = 0; t < project.techUsed.length; t++) {
+          tagHTML += '<span class="chip">' + project.techUsed[t] + "</span>";
+        }
+
+        // Build status badge
         var statusLabel =
           project.status === "active" ? "In Progress" : "Planned";
         var statusClass =
           project.status === "active" ? "status-active" : "status-planned";
-        var card = document.createElement("article");
-        card.className = "project-card fade-in";
-        card.style.transitionDelay = i * 0.1 + "s";
-        card.innerHTML =
-          '<div class="project-top"><div class="project-tag">' +
-          project.type +
-          '</div><span class="project-status ' +
+        var statusBadge =
+          '<span class="project-status ' +
           statusClass +
           '"><span class="status-dot"></span>' +
           statusLabel +
-          "</span></div>" +
-          '<h3 class="project-name">' +
+          "</span>";
+
+        var card = document.createElement("div");
+        card.className = "project-card fade-in";
+        card.style.transitionDelay = i * 0.1 + "s";
+        card.innerHTML =
+          '<div class="project-tag">' +
+          project.type +
+          "</div>" +
+          statusBadge +
+          '<div class="project-name">' +
           project.title +
-          "</h3>" +
-          '<p class="project-desc">' +
+          "</div>" +
+          '<div class="project-desc">' +
           project.description +
-          "</p>" +
-          '<p class="project-learned"><strong>What I learned:</strong> ' +
-          project.learned +
-          "</p>" +
+          "</div>" +
           '<div class="project-chips">' +
           tagHTML +
-          "</div>" +
-          '<div class="project-links">' +
-          links +
           "</div>";
+
         projectGrid.appendChild(card);
       }
 
-      document
-        .querySelectorAll(".cv-section-header")
-        .forEach(function (button) {
-          button.addEventListener("click", function () {
-            var body = button.nextElementSibling;
-            var isOpen = body.classList.toggle("open");
-            button.setAttribute("aria-expanded", String(isOpen));
-            button.querySelector(
-              ".cv-section-right span:last-child",
-            ).textContent = isOpen ? "Up" : "Down";
-          });
-        });
+      // =============================================
+      // CV ACCORDION
+      // Clicking a CV section header opens or closes
+      // the content below it
+      // =============================================
 
-      document.querySelectorAll("[data-scroll-to]").forEach(function (button) {
-        button.addEventListener("click", function () {
-          document
-            .getElementById(button.getAttribute("data-scroll-to"))
-            .scrollIntoView({ behavior: "smooth" });
-        });
-      });
+      function toggleCVSection(headerEl) {
+        // The content div is always right after the header
+        var contentEl = headerEl.nextElementSibling;
+        var arrowEl = headerEl.querySelector(
+          ".cv-section-right span:last-child",
+        );
 
-      var form = document.getElementById("contactForm");
-      var statusEl = document.getElementById("formStatus");
-      form.addEventListener("submit", async function (event) {
-        event.preventDefault();
-        var submitBtn = form.querySelector(".form-submit");
-        var payload = Object.fromEntries(new FormData(form).entries());
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Sending...";
-        statusEl.textContent = "";
-        try {
-          var response = await fetch(contactEndpoint, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload),
-          });
-          if (!response.ok) throw new Error("Contact API is not ready yet.");
-          submitBtn.textContent = "Sent";
-          statusEl.textContent = "Thanks, your message has been sent.";
-          statusEl.className = "form-note success";
-          form.reset();
-        } catch (error) {
-          var subject = encodeURIComponent(
-            payload.subject || "Portfolio contact",
-          );
-          var body = encodeURIComponent(
-            "Name: " +
-              payload.name +
-              "\nEmail: " +
-              payload.email +
-              "\n\n" +
-              payload.message,
-          );
-          statusEl.innerHTML =
-            'The contact backend is not connected yet. <a href="mailto:' +
-            fallbackEmail +
-            "?subject=" +
-            subject +
-            "&body=" +
-            body +
-            '">Send it by email instead</a>.';
-          statusEl.className = "form-note warning";
-          submitBtn.textContent = "Send message";
-        } finally {
-          submitBtn.disabled = false;
-        }
-      });
+        // Toggle the open class to show/hide content
+        var isNowOpen = contentEl.classList.toggle("open");
+
+        // Flip the arrow direction
+        arrowEl.textContent = isNowOpen ? "↑" : "↓";
+      }
+
+      // =============================================
+      // CONTACT FORM
+      // Shows a green success message when submitted
+      // =============================================
+
+      function handleSubmit(formEvent) {
+        // Stop the page from refreshing on submit
+        formEvent.preventDefault();
+
+        var submitBtn = formEvent.target.querySelector(".form-submit");
+
+        // Show success state
+        submitBtn.textContent = "Sent ✓";
+        submitBtn.style.background = "#16a34a";
+
+        // Reset back to normal after 3 seconds
+        setTimeout(function () {
+          submitBtn.textContent = "Send message →";
+          submitBtn.style.background = "";
+          formEvent.target.reset();
+        }, 3000);
+      }
+
+      // =============================================
+      // SCROLL FADE-IN ANIMATIONS
+      // I watch each element - when it comes into
+      // view I add the "visible" class to fade it in
+      // =============================================
 
       var scrollWatcher = new IntersectionObserver(
         function (entries) {
           for (var i = 0; i < entries.length; i++) {
-            if (entries[i].isIntersecting)
+            if (entries[i].isIntersecting) {
               entries[i].target.classList.add("visible");
+            }
           }
         },
         { threshold: 0.1 },
       );
-      document.querySelectorAll(".fade-in").forEach(function (el) {
-        scrollWatcher.observe(el);
-      });
+
+      // Watch all elements that have the fade-in class
+      var fadeElements = document.querySelectorAll(".fade-in");
+      for (var i = 0; i < fadeElements.length; i++) {
+        scrollWatcher.observe(fadeElements[i]);
+      }
+
+      // =============================================
+      // ACTIVE NAV LINK HIGHLIGHT
+      // As you scroll, the matching nav link lights up
+      // =============================================
 
       var allNavLinks = document.querySelectorAll(".nav-links a");
+
       window.addEventListener("scroll", function () {
-        var currentSection = "home";
-        document.querySelectorAll("section[id]").forEach(function (section) {
-          if (window.scrollY >= section.offsetTop - 120)
-            currentSection = section.id;
-        });
-        allNavLinks.forEach(function (link) {
-          link.classList.toggle(
-            "active",
-            link.getAttribute("href") === "#" + currentSection,
-          );
-        });
+        var currentSection = "";
+
+        // Check which section is currently on screen
+        var allSections = document.querySelectorAll("section[id]");
+        for (var i = 0; i < allSections.length; i++) {
+          if (window.scrollY >= allSections[i].offsetTop - 100) {
+            currentSection = allSections[i].id;
+          }
+        }
+
+        // Update nav links - active one gets highlighted
+        for (var i = 0; i < allNavLinks.length; i++) {
+          var isActive =
+            allNavLinks[i].getAttribute("href") === "#" + currentSection;
+          allNavLinks[i].classList.toggle("active", isActive);
+        }
       });
-      document.getElementById("footerYear").textContent =
-        new Date().getFullYear();
     </script>
   </body>
 </html>
