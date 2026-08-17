@@ -1,5 +1,3 @@
-const { EmailClient } = require("@azure/communication-email");
-
 module.exports = async function (context, req) {
     if (req.method === "GET") {
         context.res = {
@@ -8,6 +6,7 @@ module.exports = async function (context, req) {
         };
         return;
     }
+
     if (req.method !== "POST") {
         context.res = {
             status: 405,
@@ -41,8 +40,6 @@ module.exports = async function (context, req) {
         return;
     }
 
-    var emailClient = new EmailClient(connectionString);
-
     var emailMessage = {
         senderAddress: senderAddress,
         content: {
@@ -73,6 +70,10 @@ module.exports = async function (context, req) {
     };
 
     try {
+        const { EmailClient } = require("@azure/communication-email");
+
+        var emailClient = new EmailClient(connectionString);
+
         var poller = await emailClient.beginSend(emailMessage);
         await poller.pollUntilDone();
 
