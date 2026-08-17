@@ -61,12 +61,6 @@ module.exports = async function (context, req) {
                 },
             ],
         },
-        replyTo: [
-            {
-                address: email,
-                displayName: name,
-            },
-        ],
     };
 
     try {
