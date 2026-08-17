@@ -1,6 +1,13 @@
 const { EmailClient } = require("@azure/communication-email");
 
 module.exports = async function (context, req) {
+    if (req.method === "GET") {
+        context.res = {
+            status: 200,
+            body: "Contact API is working",
+        };
+        return;
+    }
     if (req.method !== "POST") {
         context.res = {
             status: 405,
