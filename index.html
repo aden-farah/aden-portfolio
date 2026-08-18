@@ -236,6 +236,7 @@
 
         <form
           class="contact-form fade-in"
+          id="contactForm"
           action="https://formspree.io/f/mwlewypr"
           method="POST"
         >
@@ -284,6 +285,7 @@
           </div>
 
           <button type="submit" class="form-submit">Send message →</button>
+          <p id="formStatus" class="form-status"></p>
         </form>
       </div>
     </section>
@@ -736,6 +738,49 @@
             allNavLinks[i].getAttribute("href") === "#" + currentSection;
           allNavLinks[i].classList.toggle("active", isActive);
         }
+      });
+
+      var contactForm = document.getElementById("contactForm");
+      var formStatus = document.getElementById("formStatus");
+
+      contactForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        var submitBtn = contactForm.querySelector(".form-submit");
+        var formData = new FormData(contactForm);
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending...";
+        formStatus.textContent = "";
+
+        try {
+          var response = await fetch(contactForm.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+              Accept: "application/json",
+            },
+          });
+
+          if (!response.ok) {
+            throw new Error("Formspree failed");
+          }
+
+          contactForm.reset();
+          submitBtn.textContent = "Sent ✓";
+          formStatus.textContent = "Thanks! Your message was sent.";
+          formStatus.style.color = "#16a34a";
+        } catch (error) {
+          submitBtn.textContent = "Could not send";
+          formStatus.textContent = "Something went wrong. Please try again.";
+          formStatus.style.color = "#dc2626";
+        }
+
+        setTimeout(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Send message →";
+          formStatus.textContent = "";
+        }, 4000);
       });
     </script>
   </body>

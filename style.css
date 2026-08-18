@@ -1281,3 +1281,9 @@ footer span {
     min-height: 410px;
   }
 }
+
+.form-status {
+  color: var(--muted);
+  font-size: 0.9rem;
+  min-height: 24px;
+}
