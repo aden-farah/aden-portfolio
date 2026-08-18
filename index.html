@@ -233,7 +233,12 @@
           Have a question, want to collaborate, or just want to say hi? I'd love
           to hear from you.
         </p>
-        <form class="contact-form fade-in" id="contactForm">
+
+        <form
+          class="contact-form fade-in"
+          action="https://formspree.io/f/mwlewypr"
+          method="POST"
+        >
           <div class="form-row">
             <div class="field">
               <label for="nameField">Name</label>
@@ -245,6 +250,7 @@
                 required
               />
             </div>
+
             <div class="field">
               <label for="emailField">Email</label>
               <input
@@ -256,6 +262,7 @@
               />
             </div>
           </div>
+
           <div class="field">
             <label for="subjectField">Subject</label>
             <input
@@ -265,14 +272,17 @@
               placeholder="What's it about?"
             />
           </div>
+
           <div class="field">
             <label for="messageField">Message</label>
             <textarea
               id="messageField"
               name="message"
               placeholder="Tell me about your project or question..."
+              required
             ></textarea>
           </div>
+
           <button type="submit" class="form-submit">Send message →</button>
         </form>
       </div>
@@ -678,58 +688,6 @@
         // Flip the arrow direction
         arrowEl.textContent = isNowOpen ? "↑" : "↓";
       }
-
-      // =============================================
-      // CONTACT FORM
-      // Shows a green success message when submitted
-      // =============================================
-
-      var contactForm = document.getElementById("contactForm");
-
-      contactForm.addEventListener("submit", async function (event) {
-        event.preventDefault();
-
-        var submitBtn = contactForm.querySelector(".form-submit");
-
-        var formData = new FormData(contactForm);
-
-        var payload = {
-          name: formData.get("name"),
-          email: formData.get("email"),
-          subject: formData.get("subject"),
-          message: formData.get("message"),
-        };
-
-        submitBtn.textContent = "Sending...";
-        submitBtn.disabled = true;
-
-        try {
-          var response = await fetch("/api/contact", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(payload),
-          });
-
-          if (!response.ok) {
-            throw new Error("Message failed");
-          }
-
-          submitBtn.textContent = "Sent ✓";
-          submitBtn.style.background = "#16a34a";
-          contactForm.reset();
-        } catch (error) {
-          submitBtn.textContent = "Could not send";
-          submitBtn.style.background = "#dc2626";
-        }
-
-        setTimeout(function () {
-          submitBtn.textContent = "Send message →";
-          submitBtn.style.background = "";
-          submitBtn.disabled = false;
-        }, 3000);
-      });
 
       // =============================================
       // SCROLL FADE-IN ANIMATIONS
